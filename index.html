@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Yabber</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <h1>Yabber</h1>
+        <div id="auth">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="password">
+        <button id ="loginBtn">Login</button>
+        <button id ="signupBtn">Sign up</button>
+        </div>
+        <div id="post">
+        <textarea id="content" placeholder="Write something..."></textarea>
+        <button id="postBtn">Post</button>
+        </div>
+        <div id="feed">
+            <div id="post">
+                Anon <br>
+                22/03/2026 22:40<br>
+                What the f- did you do
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

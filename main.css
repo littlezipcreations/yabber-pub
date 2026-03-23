@@ -1,0 +1,17 @@
+feed { 
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 16px;
+}
+post {
+    background: #1e293b;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+body{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    line-height: 1.6;
+    color: #e5e7eb;
+    background-color: #1e2922;
+}
