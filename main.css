@@ -1,17 +1,100 @@
-feed { 
-    max-width: 650px;
-    margin: 0 auto;
-    padding: 16px;
+/* --------------------------------------------------------------
+   0️⃣  Reset a few things that often cause unwanted stretching
+   -------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;   /* make padding/border count inside width */
 }
-post {
-    background: #1e293b;
-    padding: 16px;
-    border-radius: 12px;
-    margin-bottom: 20px;
+
+/* --------------------------------------------------------------
+   1️⃣  The outer wrapper – the only element that can be wide
+   -------------------------------------------------------------- */
+.column-wrapper {
+    max-width: 660px;               /* change this to any width you like   */
+    margin: 3rem auto;              /* top margin + horizontal centering   */
+    padding: 0 1rem;                /* small side padding so content never touches the edge */
 }
-body{
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+/* --------------------------------------------------------------
+   2️⃣  Now every inner block simply fills the wrapper,
+       but the wrapper controls the overall width
+   -------------------------------------------------------------- */
+#auth,
+#post,
+.feed {
+    width: 100%;                    /* take the full width of the wrapper, not the viewport */
+    background: #fafafa;           /* keep the paper‑like look */
+    border-radius: 8px;
+    box-shadow:
+        0 1px 3px rgba(0,0,0,.12),
+        0 4px 8px rgba(0,0,0,.08);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;          /* space between sections */
+}
+
+/* --------------------------------------------------------------
+   3️⃣  Feed – the container that holds the individual posts
+   -------------------------------------------------------------- */
+.feed {
+    background: #fafafa;            /* same paper background */
+}
+
+/* --------------------------------------------------------------
+   4️⃣  Individual post cards
+   -------------------------------------------------------------- */
+.post {
+    width: 100%;                    /* fill the .feed width */
+    max-width: 100%;                 /* safety – never exceed the wrapper */
+    margin: 1.5rem 0;               /* vertical spacing only */
+    padding: 1.5rem 1.75rem;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    box-shadow:
+        0 1px 2px rgba(0,0,0,.06),
+        0 2px 4px rgba(0,0,0,.04);
+}
+
+/* --------------------------------------------------------------
+   5️⃣  Optional – make the textarea/button inside #post look good
+   -------------------------------------------------------------- */
+#content {
+    width: 100%;
+    min-height: 120px;
+    padding: .75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    color: #222;
+    font-size: 1rem;
+    line-height: 1.5;
+    resize: vertical;
+}
+#postBtn {
+    margin-top: .75rem;
+    padding: .5rem 1.25rem;
+    background: #0d47a1;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+#postBtn:hover { background: #1565c0; }
+
+/* --------------------------------------------------------------
+   6️⃣  Body – keep the dark outer background
+   -------------------------------------------------------------- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont,
+                 "Helvetica Neue", Helvetica, Arial,
+                 "Lucida Grande", sans-serif;
     line-height: 1.6;
-    color: #e5e7eb;
-    background-color: #1e2922;
+    color: #222;
+    background: #1c1c1e;          /* dark outer area you’ll see on the sides */
+    margin: 0;
+}
+h1{
+    color: #fff;
 }

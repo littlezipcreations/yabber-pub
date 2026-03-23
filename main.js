@@ -9,7 +9,7 @@ const signupBtn = document.getElementById("signupBtn");
 const emailEl = document.getElementById("email");
 const passwordEl = document.getElementById("password");
 const auth = document.getElementById('auth');
-const post = document.getElementById('post');
+const post = document.getElementById('postN');
 
 loginBtn.onclick = async() => {
     const { data, error } = await supabaseClient.auth.signInWithPassword({
@@ -71,14 +71,14 @@ async function loadPosts() {
     const{ data, error} = await supabaseClient.from("posts").select("content, user_id, created_at, username").order("created_at", {ascending : false});
     if (error) return console.error(error);
     if (!data) return;
-    username = username.includes("@") ? username.split("@")[0] : username;
 
     for (let post of data){
         const { data: userData} = await supabaseClient.auth.admin.getUserById(post.user_id).catch(() => ({data : {user: { email: "anon"}}}));
         post.user_email = userData?.user?.email ?? "anon";
     }
+    
     feedEl.innerHTML = data.map(p => `<div class="post">
-        <b>${p.username}</b> @ <i>${new Date(p.created_at).toLocaleString()}</i><br>
+        <b>${p.username.split("@")[0]}</b> @ <i>${new Date(p.created_at).toLocaleString()}</i><br>
         ${p.content}</div>`).join("");
 }
 checkLocalStorage();
