@@ -71,6 +71,7 @@ async function loadPosts() {
     const{ data, error} = await supabaseClient.from("posts").select("content, user_id, created_at, username").order("created_at", {ascending : false});
     if (error) return console.error(error);
     if (!data) return;
+    username = username.includes("@") ? username.split("@")[0] : username;
 
     for (let post of data){
         const { data: userData} = await supabaseClient.auth.admin.getUserById(post.user_id).catch(() => ({data : {user: { email: "anon"}}}));
