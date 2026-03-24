@@ -163,8 +163,9 @@ async function loadPosts() {
     .join('');
 
   feedEl.innerHTML = html;
+  console.log("Loaded posts");
 }
 
 checkLocalStorage();
 loadPosts();
-window.setInterval(loadPosts(), 10000);
+window.setInterval(loadPosts, 10000);   // ← no parentheses
