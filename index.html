@@ -8,10 +8,11 @@
         <h1>Yabber</h1>
         <div class="column-wrapper">
         <div id="auth">
-        <input type="email" id="email" placeholder="Email">
-        <input type="password" id="password" placeholder="password">
-        <button id ="loginBtn">Login</button>
-        <button id ="signupBtn">Sign up</button>
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="password">
+            <input type="text" id="username" placeholder="Username" maxlength="30">
+            <button id ="loginBtn">Login</button>
+            <button id ="signupBtn">Sign up</button>
         </div>
         <div id="postN">
         <textarea id="content" placeholder="Write something..."></textarea>
@@ -25,7 +26,9 @@
             </div>
         </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <!-- Load Supabase's client library (the global version) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
         <script src="main.js"></script>
     </body>
 </html>
