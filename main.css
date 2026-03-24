@@ -98,3 +98,59 @@ body {
 h1{
     color: #fff;
 }
+/* Profile header */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.profile-header .avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile-header .avatar.placeholder {
+  background: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Modal styling (very basic) */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Like button – make the cursor a pointer */
+.likeBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  margin-top: 0.4rem;
+}
+.likeBtn:hover { opacity: 0.8; }
+
+/* Post container tweaks */
+.post {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-radius: 6px;
+}
